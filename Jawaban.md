@@ -121,15 +121,17 @@ Pertemuan 4 (Tugas 4) - Analisis Handshake WPA2
 
 Penjelasan Setiap Tahapan
 
-## Pertemuan 4 (Tugas 4) - Analisis Handshake WPA2
+Pertemuan 4 (Tugas 4) - Analisis Handshake WPA2
 
-### Penjelasan Setiap Tahapan
-1. **Kondisi lingkungan lab & ketersediaan tool:** Container `penyerang-k5` berada pada jaringan internal terisolasi (`internal: true`) tanpa akses DNS/internet keluar, sehingga paket `aircrack-ng` tidak tersedia di dalam container maupun repositori jaringan lab.
-2. **Alur analisis 4-way handshake WPA2:** Secara konsep, pengujian *4-way handshake* WPA2 dilakukan dengan mencocokkan *Pairwise Master Key* (PMK) yang diturunkan dari kombinasi *passphrase* kandidat pada *wordlist* dan SSID target terhadap pertukaran *nonce* serta *Message Integrity Code* (MIC) pada file *capture*. Karena *tool* tidak tersedia di container lab terisolasi dan tidak terdapat kecocokan kata sandi yang terverifikasi, status hasil analisis dicatat sebagai `KEY NOT FOUND`.
+Penjelasan Setiap Tahapan
+1. Kondisi lingkungan lab & ketersediaan tool:** Container `penyerang-k5` berada pada jaringan internal terisolasi (`internal: true`) tanpa akses DNS/internet keluar, sehingga paket `aircrack-ng` tidak tersedia di dalam container maupun repositori jaringan lab.
+   
+3. Alur analisis 4-way handshake WPA2:** Secara konsep, pengujian *4-way handshake* WPA2 dilakukan dengan mencocokkan *Pairwise Master Key* (PMK) yang diturunkan dari kombinasi *passphrase* kandidat pada *wordlist* dan SSID target terhadap pertukaran *nonce* serta *Message Integrity Code* (MIC) pada file *capture*. Karena *tool* tidak tersedia di container lab terisolasi dan tidak terdapat kecocokan kata sandi yang terverifikasi, status hasil analisis dicatat sebagai `KEY NOT FOUND`.
 
-### Perintah / Kode
-```bash
-# Referensi sintaks pengujian offline WPA2 (bila aircrack-ng, file capture, dan wordlist tersedia)
+Perintah
+
+#Referensi sintaks pengujian offline WPA2 (bila aircrack-ng, file capture, dan wordlist tersedia)
+
 aircrack-ng -w wordlist.txt -b AA:BB:CC:DD:EE:FF capture.cap
 
 Bukti Pendukung
