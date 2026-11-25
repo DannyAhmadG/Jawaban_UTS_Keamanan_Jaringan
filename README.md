@@ -1,12 +1,15 @@
-# Jawaban_UTS_Keamanan_Jaringan
-Kasus 5
+Jawaban UTS Keamanan Jaringan - Kasus 5
+
 Nama: Danny Ahmad Gunawan
+
 NIM: 24552011168 (Jumlah digit: 35, sisa bagi 5: 0 -> Kasus 5)
 
 Direktori Proyek: C:\uts-netsec-k5
+
 Persiapan Lab - Docker Compose & Konfigurasi Awal
 
 Penjelasan Setiap Tahapan
+
 Pembuatan direktori proyek: Membuat folder C:\uts-netsec-k5 di Command Prompt Windows sebagai pusat penyimpanan docker-compose.yml, skrip praktik, dan berkas laporan.
 
 Penyusunan docker-compose.yml: Mendefinisikan jaringan internal terisolasi uts_k5_net (driver: bridge, internal: true, subnet 172.25.5.0/24), volume vol-k5 dan lab-k5-vol, serta empat container:
@@ -25,11 +28,10 @@ mkdir C:\uts-netsec-k5
 cd /d C:\uts-netsec-k5
 notepad C:\uts-netsec-k5\docker-compose.yml
 
+
 Bukti Pendukung
-<img width="977" height="212" alt="image" src="https://github.com/user-attachments/assets/b9dc63eb-952a-4019-a2fb-beb50faed591" />
-<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/e9405326-7f0c-4299-9e7f-033fb6c9da67" />
-<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/e29a66e9-a47c-479f-bff6-f85a3ee80bd0" />
-<img width="1270" height="718" alt="image" src="https://github.com/user-attachments/assets/174631a2-ef2b-4a3a-bfac-b4dce03a17e0" />
+
+image_2f27cd.png, image_2f7a7d.png, image_2f7ae0.png
 
 Pertemuan 1 (Tugas 1) - Docker, Volume, dan Compose
 
@@ -53,12 +55,7 @@ docker network inspect uts-netsec-k5_uts_k5_net
 
 Bukti Pendukung
 
-<img width="977" height="452" alt="image" src="https://github.com/user-attachments/assets/a760e632-3063-45b8-84ab-0006d31468a6" />
-<img width="979" height="302" alt="image" src="https://github.com/user-attachments/assets/a3869fcc-baf1-499c-9df4-163bf71d0ca2" />
-<img width="978" height="60" alt="image" src="https://github.com/user-attachments/assets/2b84a9be-bec6-4e71-bfe8-3df073ff04e6" />
-<img width="978" height="472" alt="image" src="https://github.com/user-attachments/assets/86816ac0-b1f4-474a-b8e6-e69f74e1e3c8" />
-<img width="980" height="510" alt="image" src="https://github.com/user-attachments/assets/6729139e-b2a2-4e53-8a43-1e2c99a75139" />
-
+image_2f0e1a.png, image_2f1148.png, image_2f1180.png, image_2f11a5.png, image_2f11fd.png, image_2f1528.png, image_2f1580.png, image_2f159e.png, image_2f1868.png, image_2f18a6.png
 
 Pertemuan 2 (Tugas 2) - Kriptografi
 
