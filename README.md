@@ -1,9 +1,6 @@
 Jawaban UTS Keamanan Jaringan - Kasus 5
-
 Nama: Danny Ahmad Gunawan
-
 NIM: 24552011168 (Jumlah digit: 35, sisa bagi 5: 0 -> Kasus 5)
-
 Direktori Proyek: C:\uts-netsec-k5
 
 Persiapan Lab - Docker Compose & Konfigurasi Awal
@@ -31,7 +28,6 @@ notepad C:\uts-netsec-k5\docker-compose.yml
 
 Bukti Pendukung
 
-image_2f27cd.png, image_2f7a7d.png, image_2f7ae0.png
 
 Pertemuan 1 (Tugas 1) - Docker, Volume, dan Compose
 
