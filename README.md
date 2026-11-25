@@ -27,6 +27,13 @@ notepad C:\uts-netsec-k5\docker-compose.yml
 
 
 Bukti Pendukung
+<img width="978" height="102" alt="image" src="https://github.com/user-attachments/assets/640b2034-9f7a-4ac3-a47c-7bbfea2ff983" />
+<img width="1270" height="717" alt="image" src="https://github.com/user-attachments/assets/816cf51a-8686-4100-af46-0b2c954b022d" />
+<img width="978" height="105" alt="image" src="https://github.com/user-attachments/assets/870f925b-3adb-4261-b3ca-d540ebc0294f" />
+<img width="978" height="43" alt="image" src="https://github.com/user-attachments/assets/f9b6ca0d-08c3-4d2a-a7e3-3649969f6ee4" />
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/6d82b86e-d28e-4ff0-92c3-36038106d9dd" />
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/bd93cdb5-9e20-4bf6-84b1-6115be35b90a" />
+
 
 
 Pertemuan 1 (Tugas 1) - Docker, Volume, dan Compose
@@ -50,8 +57,13 @@ docker network inspect uts-netsec-k5_uts_k5_net
 
 
 Bukti Pendukung
+<img width="980" height="461" alt="image" src="https://github.com/user-attachments/assets/940fefd0-6d63-4d40-9d1a-e10c7bf38df1" />
+<img width="979" height="507" alt="image" src="https://github.com/user-attachments/assets/67ae7247-c092-4db7-9b19-25714882f682" />
+<img width="977" height="169" alt="image" src="https://github.com/user-attachments/assets/5da0aae3-4601-485b-a4ea-57b80cbb3c11" />
+<img width="979" height="512" alt="image" src="https://github.com/user-attachments/assets/587fa3db-c985-4ccd-be8b-59556c5da701" />
+<img width="978" height="511" alt="image" src="https://github.com/user-attachments/assets/20b38142-6380-4b65-8807-6514552c4d96" />
+<img width="980" height="372" alt="image" src="https://github.com/user-attachments/assets/513db5a5-fa41-4656-ae93-31f009b5938b" />
 
-image_2f0e1a.png, image_2f1148.png, image_2f1180.png, image_2f11a5.png, image_2f11fd.png, image_2f1528.png, image_2f1580.png, image_2f159e.png, image_2f1868.png, image_2f18a6.png
 
 Pertemuan 2 (Tugas 2) - Kriptografi
 
@@ -76,7 +88,12 @@ Perbedaan sertifikat self-signed dan CA: Sertifikat self-signed ditandatangani l
 
 Bukti Pendukung
 
-image_2f827e.png, image_2f8584.png, image_2f85c0.png, image_2f9084.png
+<img width="1366" height="147" alt="image" src="https://github.com/user-attachments/assets/a6607126-fe02-4196-ba82-8621cc90ec97" />
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/05a12961-9e21-4b1c-bf10-1cd547fed02e" />
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/dc12ad2d-3901-4cb0-943d-137243a512f3" />
+<img width="1366" height="191" alt="image" src="https://github.com/user-attachments/assets/30d13945-66b9-43f7-8e42-5793c19aa673" />
+<img width="977" height="202" alt="image" src="https://github.com/user-attachments/assets/b8c987fb-52da-4471-bb60-c9970aaa3fbd" />
+
 
 Pertemuan 3 (Tugas 3) - ARP Spoofing
 
@@ -97,36 +114,28 @@ Mitigasi selain static ARP: Dynamic ARP Inspection (DAI) pada switch terkelola, 
 
 Bukti Pendukung
 
-image_2f90e7.png
+<img width="977" height="223" alt="image" src="https://github.com/user-attachments/assets/eafcf1c8-e379-456d-b00e-a4e2dc073658" />
+
 
 Pertemuan 4 (Tugas 4) - Analisis Handshake WPA2
 
 Penjelasan Setiap Tahapan
 
-Analisis file capture & wordlist: Menjalankan aircrack-ng dengan file capture 4-way handshake WPA2 dan wordlist yang disediakan untuk menguji Pairwise Master Key (PMK) berdasarkan passphrase dan SSID.
+## Pertemuan 4 (Tugas 4) - Analisis Handshake WPA2
 
-Interpretasi hasil: Mencatat passphrase yang ditemukan jika cocok pada wordlist, atau menampilkan KEY NOT FOUND apabila kata sandi target tidak ada di dalam wordlist.
+### Penjelasan Setiap Tahapan
+1. **Kondisi lingkungan lab & ketersediaan tool:** Container `penyerang-k5` berada pada jaringan internal terisolasi (`internal: true`) tanpa akses DNS/internet keluar, sehingga paket `aircrack-ng` tidak tersedia di dalam container maupun repositori jaringan lab.
+2. **Alur analisis 4-way handshake WPA2:** Secara konsep, pengujian *4-way handshake* WPA2 dilakukan dengan mencocokkan *Pairwise Master Key* (PMK) yang diturunkan dari kombinasi *passphrase* kandidat pada *wordlist* dan SSID target terhadap pertukaran *nonce* serta *Message Integrity Code* (MIC) pada file *capture*. Karena *tool* tidak tersedia di container lab terisolasi dan tidak terdapat kecocokan kata sandi yang terverifikasi, status hasil analisis dicatat sebagai `KEY NOT FOUND`.
 
-Perintah / Kode
-
-aircrack-ng -w <wordlist.txt> -b <BSSID_AP> <capture_file.cap>
-
-
-Jawaban Konsep
-
-Empat langkah 4-way handshake WPA2:
-
-Pesan 1 (AP -> Klien): Access Point (AP) mengirim ANonce kepada klien.
-
-Pesan 2 (Klien -> AP): Klien menurunkan Pairwise Transient Key (PTK) lalu mengirim SNonce dan Message Integrity Code (MIC) ke AP.
-
-Pesan 3 (AP -> Klien): AP memverifikasi MIC, menurunkan PTK yang sama, dan mengirim Group Temporal Key (GTK) terenkripsi beserta MIC serta instruksi pemasangan kunci.
-
-Pesan 4 (Klien -> AP): Klien mengirim konfirmasi pemasangan kunci (ACK) dan mengaktifkan enkripsi sesi.
+### Perintah / Kode
+```bash
+# Referensi sintaks pengujian offline WPA2 (bila aircrack-ng, file capture, dan wordlist tersedia)
+aircrack-ng -w wordlist.txt -b AA:BB:CC:DD:EE:FF capture.cap
 
 Bukti Pendukung
 
-image_2f919c.png
+<img width="1366" height="71" alt="image" src="https://github.com/user-attachments/assets/829b2a8f-ea8c-4f67-9d55-a896ef18474f" />
+
 
 Pertemuan 5 (Tugas 5) - ICMP dengan Scapy
 
@@ -147,7 +156,7 @@ Penjelasan smurf attack: Smurf attack adalah serangan Denial of Service (DoS) be
 
 Bukti Pendukung
 
-image_2f90e7.png
+<img width="978" height="158" alt="image" src="https://github.com/user-attachments/assets/8acda457-5705-45ba-a987-36b5b7e9ae25" />
 
 Pertemuan 6 (Tugas 6) - SYN Flood dan Three-Way Handshake
 
@@ -169,7 +178,9 @@ Satu mitigasi SYN flood: TCP SYN cookies, yaitu menyandikan informasi sesi ke da
 
 Bukti Pendukung
 
-image_2f9124.png
+<img width="978" height="133" alt="image" src="https://github.com/user-attachments/assets/b6d05dcb-688a-4179-9da4-7352da70bd12" />
+<img width="1366" height="111" alt="image" src="https://github.com/user-attachments/assets/b4804c0e-d7be-4121-ada5-bb6f62fd0fa1" />
+
 
 Pertemuan 7 (Tugas 7) - DNS Exfiltration
 
@@ -193,4 +204,6 @@ Satu indikator deteksi: Panjang subdomain/label yang tidak wajar, entropi karakt
 
 Bukti Pendukung
 
-image_2f915f.png
+<img width="912" height="37" alt="image" src="https://github.com/user-attachments/assets/bf8b37d3-fc85-4421-8a89-58a0df257f5b" />
+<img width="1075" height="41" alt="image" src="https://github.com/user-attachments/assets/9bf35558-7bc9-446f-b404-3fa10f7c4d94" />
+
